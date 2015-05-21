@@ -120,7 +120,7 @@ date_translation = {
   'noviembre':'11',
   'diciembre':'12',
 }
-base_dir = '/home/notroot/sayit/sayit.mysociety.org'
+base_dir = '/home/felipe/sayit/sayit.mysociety.org'
 
 def speakers(line, special = 0):
   global titulos, speaker, references
@@ -249,7 +249,7 @@ def process(line):
         speaker_comp = ""
       #Vemos si son Intervinientes
       #if line.find('Intervino') != -1 or line.find('Palabras del') != -1 or line.find('Continuó') != -1:
-	  if line.find('Intervino') != -1 or line.find('Palabras del') != -1 or line.find('Continuó') != -1 or line.find('Interviene') != -1 or line.find('Continúa') != -1 or line.find('La Secretaría') != -1 or line.find('Interpela') != -1 or line.find('Responde') != -1 or line.find('Informa') != -1:
+      if line.find('Intervino') != -1 or line.find('Palabras del') != -1 or line.find('Continuó') != -1 or line.find('Interviene') != -1 or line.find('Continúa') != -1 or line.find('La Secretaría') != -1 or line.find('Interpela') != -1 or line.find('Responde') != -1 or line.find('Informa') != -1:
         #Vemos si el speaker esta en 2 lineas
         if line.find(':') == -1 :
           comp_start = line.find(',')
@@ -365,7 +365,7 @@ def scrape(url):
           print 'Se convirtió a xml: '+xmlName
           print 'Llamando a acomantoso'
 		  #Este es el call para hacerlo en orden
-          call(base_dir+'/manage.py load_akomantoso --file=/home/notroot/actas-consejo-medellin/actas-xml/'+xmlName+' --instance=concejodemedellin --commit', shell=True);
+          call(base_dir+'/manage.py load_akomantoso --file=/home/felipe/actas-consejo-medellin/actas-xml/'+xmlName+' --instance=concejodemedellin --commit', shell=True);
         except Exception as e:
           print 'ERROR no se convertió a XML o no subió a Akomantoso!!!!: ', e
           continue
